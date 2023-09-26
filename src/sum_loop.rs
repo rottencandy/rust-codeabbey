@@ -1,5 +1,8 @@
 pub fn run(input: &str) -> i32 {
-    input.split_whitespace().map(|s| s.parse::<i32>().unwrap()).sum()
+    input
+        .split_whitespace()
+        .map(|s| s.parse::<i32>().expect("Unable to parse input"))
+        .sum()
 }
 
 #[cfg(test)]
