@@ -1,8 +1,8 @@
-use codeabbey::sum;
+use codeabbey::{sum, sum_loop};
 use std::{collections::HashMap, io};
 
 fn main() {
-    let table = HashMap::from([(1, sum::run)]);
+    let table = HashMap::from([(1, sum::run as fn(&str) -> i32), (2, sum_loop::run)]);
     let mut input = String::new();
 
     println!("Problem: ");
