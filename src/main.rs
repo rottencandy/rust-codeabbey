@@ -9,6 +9,7 @@ fn main() {
     io::stdin()
         .read_line(&mut input)
         .expect("Failed to read input");
+    input.clear();
     let problem = input.trim().parse::<i32>().unwrap_or(table.len() as i32);
     let solver = table
         .get(&problem)
