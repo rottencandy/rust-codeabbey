@@ -1,4 +1,3 @@
-pub fn run(input: &str) -> i32 {
 /// Input data has the following format:
 /// 
 /// first line contains N - amount of values to sum;
@@ -14,11 +13,13 @@ pub fn run(input: &str) -> i32 {
 /// 
 /// answer:
 /// `126`
+pub fn run(input: &str) -> String {
     input
         .split_whitespace()
         .skip(1)
         .map(|s| s.parse::<i32>().expect("Unable to parse input"))
-        .sum()
+        .sum::<i32>()
+        .to_string()
 }
 
 #[cfg(test)]
@@ -27,6 +28,6 @@ mod tests {
 
     #[test]
     fn test_sum() {
-        assert_eq!(run("3\n2 2 2"), 6);
+        assert_eq!(run("3\n2 2 2"), "6");
     }
 }
