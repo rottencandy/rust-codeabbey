@@ -1,10 +1,11 @@
-use codeabbey::{sum, sum_loop};
+use codeabbey::{sum, sum_in_loop, sum_loop};
 use std::{collections::HashMap, io};
 
 fn main() {
     let table = HashMap::from([
         (1, sum::run as fn(&str) -> String),
         (2, sum_loop::run),
+        (3, sum_in_loop::run),
     ]);
 
     println!("Problem: ");
